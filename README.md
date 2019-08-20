@@ -36,3 +36,4 @@ The smartCREDIT Hub app is used by consumers to manage their credit, and take ma
 
 # Demo Guide
 To demo simply click on the Discover button in the web site, and then go to the Hub app to click on the reminder to take a yearly photo, and if the pool is found to be in need of maintenance, to contact a service provider to schedule an appointment.
+ 
