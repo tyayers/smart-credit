@@ -30,7 +30,7 @@ The smartCREDIT API Portal allows service providers and third party apps to conn
 
 [Demo version](https://smart-credit-cfc36.firebaseapp.com/app)
 
-![smartCREDIT Hub](images/credit-api-portal.png)
+![smartCREDIT Hub](images/credit-hub.png)
 
 The smartCREDIT Hub app is used by consumers to manage their credit, and take maintenance photos and connct with HomeMaintenance+ service providers.
 
