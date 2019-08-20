@@ -10,20 +10,21 @@ This ecosystem is maintained through APIs integrating with smartCREDIT's web sit
 # Deployment
 After cloning this repository, simply initialize the Firebase project in the root directory using the firebase CLI and calling 'firebase init'.  Then call 'firebase serve' to launch a local version.
 
-#Apps
+# Apps
 
 ## smartCREDIT Web Site
-[Demo version](https://smart-credit.web.app)
-!(images/credit-web.png)
+[Demo version](https://smart-credit-cfc36.firebaseapp.com/)
+![smartCREDIT Web Site](images/credit-web.png)
 Apply for financing for a new swimming pool on the smartCREDIT web site.
 
 ## smartCREDIT API Portal
 [Demo version](https://tyayers-eval-smartcreditportal.apigee.io/)
-!(images/credit-api-portal.png)
+![smartCREDIT API Portal](images/credit-api-portal.png)
 The smartCREDIT API Portal allows service providers and third party apps to connect to the smartCREDIT ecoystem. Note: Currently the APIs are not correctly rendered in the portal due to a bug.
 
 ## smartCREDIT Hub
-[Demo version](https://smart-credit.web.app/app)
+[Demo version](hhttps://smart-credit-cfc36.firebaseapp.com/app)
+![smartCREDIT Hub](images/credit-api-portal.png)
 The smartCREDIT Hub app is used by consumers to manage their credit, and take maintenance photos and connct with HomeMaintenance+ service providers.
 
 #Demo Guide
