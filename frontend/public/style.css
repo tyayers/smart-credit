@@ -1,3 +1,4 @@
+
 /* [Core Stylesheet - 1.0] */
 /* :: 1.0 Import Fonts */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Open+Sans:300,400,600,700");
@@ -1863,3 +1864,161 @@ img {
 /* ====== The End ====== */
 
 /*# sourceMappingURL=style.css.map */
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+body, html {
+  min-height: 100vh;
+  background: #666;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+}
+.table {
+  display: table;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+.table-cell {
+  display: table-cell;
+  /* vertical-align: middle; */
+}
+.upload-picture {
+  width: 300px;
+  height: 400px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 40px 50px rgba(black, 0.35);
+  padding: 40px;
+}
+#mediaFile {
+  position: absolute;
+  top: -1000px;
+}
+#profile {
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  position: relative;
+  /* top: -80px;
+  margin-bottom: -80px; */
+  cursor: pointer;
+  background: #f4f4f4;
+  display: table;
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0 5px 8px rgba(black, 0.35);
+  .dashes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    border: 4px dashed #ddd;
+    opacity: 1;
+  }
+  label {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 30px;
+    color: grey;
+    opacity: 1;
+  }
+  &.dragging {
+    background-image: none!important;
+    .dashes {
+      animation-duration: 10s;
+      animation-name: spin;
+      animation-iteration-count:infinite;
+      animation-timing-function: linear;
+      opacity: 1!important;
+    }
+    label {
+      opacity: 0.5!important;
+    }
+  }
+  &.hasImage {
+    .dashes, label {
+      opacity: 0;
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+}
+h1 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+.stat {
+  width: 50%;
+  text-align: center;
+  float: left;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  .label {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase
+  }
+  .num {
+    font-size: 21px;
+    padding: 3px 0;
+  }
+}
+.editable {
+  position: relative;
+  i {
+    position: absolute;
+    top: 10px;
+    right: -20px;
+    opacity: 0.3
+  }
+}
+button {
+  width: 100%;
+  -webkit-appearance: none;
+  line-height: 40px;
+  color: #fff;
+  border: none;
+  background-color: #ea4c89;
+  margin-top: 30px;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase
+}
+// ----- Mobile styles -----
+@media only screen 
+  and (max-device-width: 736px) { 
+}
+

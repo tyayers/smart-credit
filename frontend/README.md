@@ -7,6 +7,9 @@ This is a win-win for the bank and the consumer - the bank makes sure the consum
 
 This ecosystem is maintained through APIs integrating with smartCREDIT's web site, mobile consumer app, and all of the service providers.  New providers and features can be added to the network through self-service in smartCREDIT's API portal.
 
+# Building
+SCSS:  sass --watch public/scss/style.scss public/style2.css
+
 # Deployment
 After cloning this repository, simply initialize the Firebase project in the root directory using the firebase CLI and calling 'firebase init'.  Then call 'firebase serve' to launch a local version.
 

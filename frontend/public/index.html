@@ -15,8 +15,9 @@
     <link rel="icon" href="img/core-img/favicon.ico">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"/>
 </head>
 
 <body>
@@ -39,7 +40,7 @@
                     <div class="col-12 d-flex justify-content-between">
                         <!-- Logo Area -->
                         <div class="logo">
-                            <span style="padding-top: 0px;font-size: 36px;font-weight: bolder;display: inline-block;position: relative;top: 7px;color: #003679;">smart</span><a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                            <span style="padding-top: 0px;font-size: 36px;font-weight: bolder;display: inline-block;position: relative;top: 7px;color: #003679;"></span><a href="index.html"><img style="height: 80px" src="img/core-img/sc-logo.png" alt=""></a>
                         </div>
 
                         <!-- Top Contact Info -->
@@ -84,7 +85,7 @@
                                             <li><a href="services.html">Services</a></li>
                                             <li><a href="post.html">Post</a></li>
                                             <li><a href="single-post.html">Single Post</a></li>
-                                            <li><a href="app/index.html">Mobile App</a></li>
+                                            <li><a href="chat/index.html">Chat</a></li>
                                             <li><a href="elements.html" target="_blank">Elements</a></li>
                                         </ul>
                                     </li>
@@ -129,8 +130,8 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <li><a href="https://tyayers-eval-smartcreditportal.apigee.io/" target="_blank">API Portal</a></li>
-                                    <li><a href="app/index.html" target="_blank">Mobile App</a></li>
+                                    <li><a href="https://emea-poc13-smartcredit.apigee.io" target="_blank">API Portal</a></li>
+                                    <li><a href="chat/index.html" target="_blank">Chat</a></li>
                                 </ul>
                             </div>
                             <!-- Nav End -->
@@ -710,7 +711,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <div class="modal-dialog" role="document"  style="max-width: 80%;">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">smartCREDIT Swimming Pool Credit</h5>
+                <h2 class="modal-title" id="exampleModalLabel">smart-credit Instant Credit</h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -718,10 +719,114 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             <div class="modal-body">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm">
-                        <img src="app/images/swimmingpool.jpg" width="90%">
+
+                        <div class="col-md-12 col-md-offset-3">
+                            <form id="msform">
+                                <!-- progressbar -->
+                                <ul id="progressbar" style="color: black;">
+                                    <li class="active">Object Details</li>
+                                    <li>Credit Details</li>
+                                    <li>Additional Services</li>
+                                </ul>
+                                <!-- fieldsets -->
+                                <fieldset>
+                                    <h2 class="fs-title">Object Details</h2>
+                                    <h3>Upload a picture of the object to finance</h3>
+                                    <div class="file-upload">
+                                        <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+                                        
+                                        <div class="image-upload-wrap">
+                                            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                                            <div class="drag-text">
+                                            <h3>Drag and drop a file or select add Image</h3>
+                                            </div>
+                                        </div>
+                                        <div class="file-upload-content">
+                                            <img class="file-upload-image" src="#" alt="your image" />
+                                            <div class="image-title-wrap">
+                                            <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                                    <input type="button" name="next" class="next action-button" style="display: none" value="Next"/>                                
+                                </fieldset>
+                                <fieldset>
+                                    <h2 class="fs-title">Additional Services</h2>
+                                    <h3 class="fs-subtitle"></h3>
+                                    <div class="form-group">
+                                        <h3 id="object-name"></h3>
+                                        <label for="exampleInputEmail1">Total credit amount</label>
+                                        <input type="number"  onchange="homeMaintenenaceChange();" class="form-control" id="credit-amount" aria-describedby="emailHelp" placeholder="Enter credit amount" value="10000">
+                                        <small id="emailHelp" class="form-text text-muted">You can reduce your yearly bill by 50 € when you add HomeMaintenance+ below.</small>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Credit length
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#" onclick="setCreditLength(6);">6 months</a>
+                                            <a class="dropdown-item" href="#" onclick="setCreditLength(12);">12 months</a>
+                                            <a class="dropdown-item" href="#" onclick="setCreditLength(24);">24 months</a>
+                                            <a class="dropdown-item" href="#" onclick="setCreditLength(36);">36 months</a>
+                                            <a class="dropdown-item" href="#" onclick="setCreditLength(48);">48 months</a>
+                                            <a class="dropdown-item" href="#" onclick="setCreditLength(72);">72 months</a>                                            
+                                        </div>
+                                    </div>
+                                    <div style="margin-top: 10px; font-size: 18px;">
+                                        Credit length: <span id="credit-length">48 months</span>
+                                    </div>
+                                    <div style="margin-top: 10px; font-size: 18px;">
+                                        Estimated monthly rate: <span class="credit-monthly-amount">208.33 €</span>
+                                    </div>
+                                    <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                                    <input type="button" name="next" class="next action-button" value="Next"/>
+                                </fieldset>
+                                <fieldset>
+                                    <h2 class="fs-title">Add insurance</h2>
+                                    <h3 class="fs-subtitle">Get the best insurance deals here</h3>
+                                    <div id="insurance-list" class="list-group">
+                                    </div>
+                                    <div style="margin-top: 10px; font-size: 18px;">
+                                        Base monthly rate: <span class="credit-monthly-amount">208.33 €</span>
+                                    </div>
+                                    <div style="margin-top: 10px; font-size: 18px;">
+                                        Insurance rate: <span id="insurance-monthly-amount">0 €</span>
+                                    </div>
+                                    <div style="margin-top: 10px; font-size: 18px;">
+                                        Total monthly rate: <span id="total-monthly-amount">208.33 €</span>
+                                    </div>                                                                        
+                                    <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                                    <input type="submit" name="submit" class="submit action-button" onclick="submitCredit();" value="Submit"/>
+                                </fieldset>
+                            </form>
+                            <!-- link to designify.me code snippets -->
+                            <!-- <div class="dme_link">
+                                <p><a href="http://designify.me/code-snippets-js/" target="_blank">More Code Snippets</a></p>
+                            </div> -->
+                            <!-- /.link to designify.me code snippets -->
                         </div>
-                        <div class="col-sm">
+
+                        <!-- <div class="col-6">
+                            <h3>Upload a picture of the object to finance</h3>
+                            <div class="file-upload">
+                                <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+                                
+                                <div class="image-upload-wrap">
+                                    <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                                    <div class="drag-text">
+                                    <h3>Drag and drop a file or select add Image</h3>
+                                    </div>
+                                </div>
+                                <div class="file-upload-content">
+                                    <img class="file-upload-image" src="#" alt="your image" />
+                                    <div class="image-title-wrap">
+                                    <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="col-6">
                             <form style="font-size: 18px;">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Total credit amount</label>
@@ -752,13 +857,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                   
                                 </div>
                             </form>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="submitCredit();">Submit</button>
+                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="submitCredit();">Submit</button> -->
             </div>
             </div>
         </div>   
@@ -778,6 +883,24 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="/__/firebase/7.4.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="/__/firebase/7.4.0/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="/__/firebase/7.4.0/firebase-auth.js"></script>
+    <script src="/__/firebase/7.4.0/firebase-firestore.js"></script>    
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-firestore.js"></script>    
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
 </body>
 
 </html>
