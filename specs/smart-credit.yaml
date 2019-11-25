@@ -1,0 +1,227 @@
+# Example YAML to get you started quickly.
+# Be aware that YAML has indentation based coping.
+# Code completion support is available so start typing for available options.
+swagger: '2.0'
+# This is your document metadata
+info:
+  version: "1.0.0"
+  title: smart-credit API
+  description: This API is used to integrate with our partners and service providers for banking and financial products.
+host:
+  emea-poc13-prod.apigee.net
+basePath:
+    /smart-credit
+schemes:
+  - https
+securityDefinitions:
+  APIKey:
+    type: apiKey
+    in: query
+    name: apikey
+security:
+  - APIKey: []
+paths:
+  /credit/calculate-rate:
+    post:
+      summary: Calculates the monthly credit packages for a given customer and object to finance
+      parameters:
+        - in: body
+          description: The customer and object for the credit financing
+          name: data
+          required: true
+          schema:
+            $ref: '#/definitions/CreditRequest'
+      responses:
+        200:
+          description: "Successful response"
+          schema:
+            $ref: '#/definitions/CreditResponse'
+  /vision:
+    post:
+      summary: Analyzes the posted image using cloud vision AI and returns the labels and scores of the objects found in the image. 
+      parameters:
+        - in: body
+          description: The image that should be analyzed
+          name: image
+          required: true
+          schema:
+            $ref: '#/definitions/ImageRequest'
+        - in: query
+          description: The engine that should be used for the image analysis
+          name: engine
+          type: string
+          default: cloudvision
+          enum: [cloudvision, amlvision]
+          required: false
+      responses:
+        200:
+          description: "Successful response"
+          schema:
+            $ref: '#/definitions/ImageResponse'
+  /cloudvision:
+    post:
+      summary: Analyzes the posted image using cloud vision AI and returns the labels and scores of the objects found in the image. This is identical to calling the vision api with query parameter engine=cloudvision
+      parameters:
+        - in: body
+          description: The image that should be analyzed
+          name: image
+          required: true
+          schema:
+            $ref: '#/definitions/ImageRequest'
+      responses:
+        200:
+          $ref: '#/definitions/ImageResponse'
+  /amlvision:
+    post:
+      summary: Analyzes the posted image using cloud vision AI and returns the labels and scores of the objects found in the image. This is identical to calling the vision api with query parameter engine=amlvision
+      parameters:
+        - in: body
+          description: The image that should be analyzed
+          name: image
+          required: true
+          schema:
+            $ref: '#/definitions/ImageRequest'
+      responses:
+        200:
+          $ref: '#/definitions/ImageResponse'
+definitions:
+  ImageRequest:
+    type: object
+    properties:
+      requests:
+        description: The image container object containing the image
+        type: array
+        items:
+          $ref: '#/definitions/ImageContainer'
+  ImageContainer:
+    type: object
+    properties:
+      image:
+        $ref: '#/definitions/Image'
+  Image:
+    type: object
+    properties:
+      content:
+        description: The base64 encoded image to analyze
+        type: string
+      features:
+        description: The features that the image analysis should use
+        type: array
+        items:
+          $ref: '#/definitions/Feature'
+  Feature:
+    description: The feature object contains the types of features to use for analyzing the iamge.
+    type: object
+    properties:
+      type:
+        description: The only valid option to use here is LABEL_DETECTION
+        type: string
+  ImageResponse:
+    type: object
+    properties:
+      responses:
+        description: The image analysis response labels
+        type: array
+        items:
+          $ref: '#/definitions/LabelAnnotations'  
+  LabelAnnotations:
+    type: object
+    properties:
+      labelAnnotations:
+        description: The label annotations from the image analysis
+        type: array
+        items:
+          $ref: '#/definitions/LabelAnnotation'
+  LabelAnnotation:
+    type: object
+    properties:
+      mid:
+        description: The knowledge graph id of the object, can be used to query the Google Knowledge Graph for more information
+        type: string
+      description: 
+        description: Text description of the object
+        type: string
+      score:
+        description: How accurate the object recognition was
+        type: number
+        format: double
+      topicality:
+        description: How topical the object is, relating to the score.
+        type: number
+        format: double
+  CreditRequest:
+    type: object
+    properties:
+      objectId:
+        description: The object Id
+        type: string
+      objectValue:
+        description: The value of the object (new retail price)
+        type: number
+        format: double
+      objectKeywords:
+        description: The key words describing the object
+        type: string
+      currencyCode:
+        description: The currency code of the value (ISO 4217 3 letter codes)
+        type: string
+      customerId:
+        description: The customer Id
+        type: string        
+      months: 
+        description: The number of months to insure the product
+        type: integer
+      images:
+        $ref: '#/definitions/ImageRequest'
+  CreditResponse:
+    type: object
+    properties:
+      objectId:
+        description: The object Id
+        type: string
+      objectValue:
+        description: The value of the object (new retail price)
+        type: number
+        format: double
+      objectKeywords:
+        description: The key words describing the object
+        type: string        
+      objectType:
+        description: The object type
+        type: string
+      currencyCode:
+        description: The currency code of the value (ISO 4217 3 letter codes)
+        type: string
+      customerId:
+        description: The customer Id
+        type: string        
+      months: 
+        description: The number of months to insure the product
+        type: integer  
+      rate:
+        description: The monthly rate to insure the object, in the same currency as objectValueCurrencyCode
+        type: number
+        format: double
+      effectiveInterestRate:
+        description: The effective interest rate charged for the credit
+        type: number
+        format: double
+      addOns:
+        description: Add-on packges that can be booked, such as insurance
+        type: array
+        items:
+          type: object
+          properties: 
+            type: 
+              description: The type of add-on
+              type: string
+            package:
+              description: The name of the insurance package
+              type: string
+            confirmationUrl:
+              description: The URL to confirm the insurance package
+              type: string
+            rate:
+              description: The monthly rate to insure the object, in the same currency as objectValueCurrencyCode
+              type: number
+              format: double

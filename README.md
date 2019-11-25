@@ -1,6 +1,8 @@
 # Smart-Credit API Ecosystem Showcase
 This is a showcase demo of how APIs can define both an internal and external ecosystem strategy and architecture.  As is demonstrated here, an API-First digital strategy is the cornerstone of a larger internal and ecosystem strategy and transformation.
 
+<img src="img/sc-logo.png" width="350" />
+
 Smart-Credit is a fictional online bank and financing provider who has a variety of financing packages available for consumers and businesses.  They are known for their low rates and consumer-friendly approach, always looking for creative ways to reach their customers, and fulfill their financing needs.  Their latest feature is an **Instant Credit** feature that allows customers to just upload a photo of an object to finance, and Smart-Credit evalutates the object using the Google Vision API image recognition technology, and tailors a financing offer based on the image data, customer credit history, and other data points.  They are also looking to radically open themselves to partner and ecosystem integrations to expand their business.
 
 Smart-Credit as completed the first stage of this transformation, and has executed on these three scenarios:
@@ -24,23 +26,27 @@ Based on the very successful implentation of these scenarios, Smart-Credit has a
 
 This is the Smart-Credit web portal, where customers can get their financing approved with 1-click, and use the Instant Credit feature based on image recognition using the Google Cloud Vision API.  Click on the **Discover** button to use Instant Credit.
 
-<img src="img/smart-credit-portal.png" height="350" />
+<a href="https://smart-credit-cfc36.firebaseapp.com/" target="_blank"><img src="img/smart-credit-portal.png" height="350" /></a>
 
 [Smart-Credit API Hub](https://emea-poc13-smartcredit.apigee.io/)
 
 The Smart-Credit API Hub has the API products published for different audiences (core credit and insurance providers), as well as app registration for developers, and the terms & conditions for all API clients.
 
-<img src="img/smart-credit-dev-portal.png" height="350" />
+<a href="https://emea-poc13-smartcredit.apigee.io/" target="_blank"><img src="img/smart-credit-dev-portal.png" height="350" /></a>
 
-[Ecosystem Chat & Messaging App](https://airport-security.web.app/airline-app.html)
+[Ecosystem Chat & Messaging App](https://smart-credit-cfc36.firebaseapp.com/chat.html)
 
 Because the Smart-Credit team has published its core business APIs for both internal and external use, it's easy for app developers to add financing functionality to their apps.  Just send a picture to the smart-credit bot, and you will get your financing offer instantly, just like at the credit portal.
 
-<img src="img/credit-chat.png" height="350" />
+<a href="https://smart-credit-cfc36.firebaseapp.com/chat.html" target="_blank"><img src="img/credit-chat.png" height="350" /></a>
 
 ## Demo Screencast
 
+<a href="screencast/Smart-Credit API Showcase.mp4" target="_blank"><img src="img/screencast-cover.png" height="350" /></a>
+
 ## Architecture
+
+<img src="img/architecture.png" height="350" />
 
 ## Deployment
 
