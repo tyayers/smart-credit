@@ -1,0 +1,114 @@
+# Example YAML to get you started quickly.
+# Be aware that YAML has indentation based coping.
+# Code completion support is available so start typing for available options.
+swagger: '2.0'
+# This is your document metadata
+info:
+  version: "1.0.0"
+  title: smart-credit Insurance API
+  description: This API is used to integrate with our insurance partners for credit+insurance packages.  To join our ecosystem, simply implement the /provider/rate API in your cloud environment, and submit your API via the PUT /provider call below.  We will validate your API, and add you to our ecosystem without delay.
+host:
+  emea-poc13-prod.apigee.net
+basePath:
+  /smart-credit/insurance
+schemes:
+  - https
+securityDefinitions:
+  APIKey:
+    type: apiKey
+    in: query
+    name: apikey
+security:
+  - APIKey: []
+paths:
+  /provider:
+    put:
+      summary: Submits a new insurance provider to be verified.  After verification the provider will be offered through the smart-credit portal.
+      parameters:
+        - in: body
+          description: The insurance provider object
+          name: data
+          required: true
+          schema:
+            $ref: '#/definitions/InsuranceProvider'
+      responses:
+        200:
+          description: OK
+  /provider/rate:
+    post:
+      summary: Calculates the insurance rate for the given object from a given provider.  This is just the spec, every insurance provider should implement this and provide the endpoint via the PUT provider call above.
+      parameters:
+        - name: data
+          description: The insurance request object with all of the details
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/InsuranceRequest'
+      responses:
+        200:
+          $ref: '#/definitions/InsuranceResponse'          
+definitions:
+  InsuranceRequest:
+    type: object
+    properties:
+      objectId:
+        description: The object Id
+        type: string
+      objectValue:
+        description: The value of the object (new retail price)
+        type: number
+        format: double
+      objectKeywords:
+        description: The key words describing the object
+        type: string
+      currencyCode:
+        description: The currency code of the value (ISO 4217 3 letter codes)
+        type: string
+      customerId:
+        description: The customer Id
+        type: string        
+      months: 
+        description: The number of months to insure the product
+        type: integer
+  InsuranceResponse:
+    type: object
+    properties:
+      objectId:
+        description: The object Id
+        type: string
+      objectValue:
+        description: The value of the object (new retail price)
+        type: number
+        format: double
+      objectKeywords:
+        description: The key words describing the object
+        type: string        
+      currencyCode:
+        description: The currency code of the value (ISO 4217 3 letter codes)
+        type: string
+      customerId:
+        description: The customer Id
+        type: string        
+      months: 
+        description: The number of months to insure the product
+        type: integer  
+      package:
+        description: The name of the insurance package
+        type: string
+      rate:
+        description: The monthly rate to insure the object, in the same currency as objectValueCurrencyCode
+        type: number
+        format: double
+  InsuranceProvider:
+    type: object
+    properties:
+      providerName:
+        description: The name of the insurance provider
+        type: string
+      website:
+        description: The web site of the provider
+        type: string
+      service-url: 
+        description: The service URL acception the calculate-rate API
+        type: string
+        
