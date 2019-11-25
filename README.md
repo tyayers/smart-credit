@@ -42,11 +42,11 @@ Because the Smart-Credit team has published its core business APIs for both inte
 
 ## Demo Screencast
 
-<a href="screencast/Smart-Credit API Showcase.mp4" target="_blank"><img src="img/screencast-cover.png" height="350" /></a>
+<a href="screencast/Smart-Credit API Showcase.mp4?raw=true" target="_blank"><img src="img/screencast-cover.png" height="350" /></a>
 
 ## Architecture
 
-<img src="img/architecture.png" height="350" />
+<img src="img/architecture.png" height="600" />
 
 ## Deployment
 
