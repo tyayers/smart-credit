@@ -98,16 +98,18 @@ function calculate(req, res) {
   let allProviders = insuranceRef.get()
     .then(snapshot => {
       snapshot.forEach(doc => {
-        promises.push(axios.post(doc.data()["service-url"], result).then(function (response) {
-          var data = response.data;
-          data.objectType = result.objectType;
-          data.website = doc.data().website;
-          data.providerName = doc.data().providerName;
-          data.confirmationUrl = doc.data()["service-url"] + "/89fd98sf8d9sf8ds998fds989fe/confirm";
-          return data;
-        }).catch(function (error) {
-          console.log(error);
-        }))
+        if (doc.data().verified) {
+          promises.push(axios.post(doc.data()["service-url"], result).then(function (response) {
+            var data = response.data;
+            data.objectType = result.objectType;
+            data.website = doc.data().website;
+            data.providerName = doc.data().providerName;
+            data.confirmationUrl = doc.data()["service-url"] + "/89fd98sf8d9sf8ds998fds989fe/confirm";
+            return data;
+          }).catch(function (error) {
+            console.log(error);
+          }))
+        }
       });
     })
     .catch(err => {

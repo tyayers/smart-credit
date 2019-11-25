@@ -96,17 +96,17 @@
           var templateResponse = Handlebars.compile( $("#message-response-template").html());
           var message = 
 `Here's what we can do to finance a ${response.data.objectType}:
-Estimated credit amount: $${response.data.objectValue} 
+Estimated credit amount: ${response.data.objectValue} €
 Recommended credit length: ${response.data.months} months
-Effective interest rate: ${response.data.effectiveInterestRate}%
-Monthly rate: $${response.data.rate}
+Effective interest rate: ${response.data.effectiveInterestRate}% 
+Monthly rate: ${response.data.rate} €
 `;
 
           if (response.data.addOns.length > 0) {
             message = message + `Add-ons from our partners: `;
             for (i = 0; i < response.data.addOns.length; i++) {
               message = message + `
-    - ${response.data.addOns[i].providerName} + $${response.data.addOns[i].rate}`;
+    - ${response.data.addOns[i].providerName} + ${response.data.addOns[i].rate} €`;
             }
           }
 
