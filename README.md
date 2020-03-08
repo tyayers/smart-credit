@@ -1,42 +1,45 @@
-# Smart-Credit API Ecosystem Showcase
+# Apibank API Ecosystem Showcase
 This is a showcase demo of how APIs can define both an internal and external ecosystem strategy and architecture.  As is demonstrated here, an API-First digital strategy is the cornerstone of a larger internal and ecosystem strategy and transformation.
 
 <img src="img/sc-logo.png" width="350" />
 
-Smart-Credit is a fictional online bank and financing provider who has a variety of financing packages available for consumers and businesses.  They are known for their low rates and consumer-friendly approach, always looking for creative ways to reach their customers, and fulfill their financing needs.  Their latest feature is an **Instant Credit** feature that allows customers to just upload a photo of an object to finance, and Smart-Credit evalutates the object using the Google Vision API image recognition technology, and tailors a financing offer based on the image data, customer credit history, and other data points.  They are also looking to radically open themselves to partner and ecosystem integrations to expand their business.
+Apibank is a fictional online bank and financing provider who has a variety of financing packages available for consumers and businesses.  They are known for their low rates and consumer-friendly approach, always looking for creative ways to reach their customers, and fulfill their financing needs.  Their latest feature is an **Instant Credit** feature that allows customers to just upload a photo of an object to finance, and Apibank evalutates the object using the Google Vision API image recognition technology, and tailors a financing offer based on the image data, customer credit history, and other data points.  They are also looking to radically open themselves to partner and ecosystem integrations to expand their business.
 
-Smart-Credit as completed the first stage of this transformation, and has executed on these three scenarios:
+## Customize Demo
+This demo can be customized by double clicking on the 
+
+Apibank as completed the first stage of this transformation, and has executed on these three scenarios:
 
 ## Scenario 1: Internal Web Portal Team
-The internal web portal team used to integrate the backend services team's APIs directly, but now they use the Smart-Credit API Hub for all of their integration needs.  If it doesn't exist in the API Hub, then it doesn't exist for them to use.  This addresses their core business use case, and has made their internal development much faster and more effective.
+The internal web portal team used to integrate the backend services team's APIs directly, but now they use the Apibank API Hub for all of their integration needs.  If it doesn't exist in the API Hub, then it doesn't exist for them to use.  This addresses their core business use case, and has made their internal development much faster and more effective.
 
 ## Scenario 2: Partner Ecosystem for Insurance Providers
-Smart-Credit has recognized that when customers are financing an expensive new purchase, they also need the peace of mind that in case something goes wrong, they're also covered.  So for this reason it is a natrual extension to integrate insurance providers into the Smart-Credit ecosystem, but how?
+Apibank has recognized that when customers are financing an expensive new purchase, they also need the peace of mind that in case something goes wrong, they're also covered.  So for this reason it is a natrual extension to integrate insurance providers into the Apibank ecosystem, but how?
 
-The answer is through clear and transparent APIs tailored for this purpose, so Smart-Credit has defined their **Insurance Provider API**, and published it as a product on their API Hub.  Through API Evangelism, good documentation, and easy integration and testing they already have the first providers integrated, and have opened up a new business by reselling insurance along with their credit products.
+The answer is through clear and transparent APIs tailored for this purpose, so Apibank has defined their **Insurance Provider API**, and published it as a product on their API Hub.  Through API Evangelism, good documentation, and easy integration and testing they already have the first providers integrated, and have opened up a new business by reselling insurance along with their credit products.
 
 ## Scenario 3: New Channels To Reach Customers
-A further advantage to defining their internal communication through APIs in **Scenario 1** is that Smart-Credit is now prepared to offer their core business APIs to external developers, which makes it easy to execute on new channel integrations - it's all clearly documented and testable in the API Hub, and so within a day a developer of a new Chat and Messaging app has integarted the Smart-Credit Bot to provide consumers with credit and insurance offers directly in their chat interface (including the Instant Credit image recognition functionality!) 
+A further advantage to defining their internal communication through APIs in **Scenario 1** is that Apibank is now prepared to offer their core business APIs to external developers, which makes it easy to execute on new channel integrations - it's all clearly documented and testable in the API Hub, and so within a day a developer of a new Chat and Messaging app has integarted the Apibank Bot to provide consumers with credit and insurance offers directly in their chat interface (including the Instant Credit image recognition functionality!) 
 
-Based on the very successful implentation of these scenarios, Smart-Credit has already managed to grow its customer base, and has been awared with several technology innovation awards within the industry.  Suddenly it's also easier to attract new talent, partners and customers with so much positive buzz around their successful API innovation approach.
+Based on the very successful implentation of these scenarios, Apibank has already managed to grow its customer base, and has been awared with several technology innovation awards within the industry.  Suddenly it's also easier to attract new talent, partners and customers with so much positive buzz around their successful API innovation approach.
 
 ## Demo Apps
 
-[Smart-Credit Web Portal](https://smart-credit-cfc36.firebaseapp.com/)
+[Apibank Web Portal](https://smart-credit-cfc36.firebaseapp.com/)
 
-This is the Smart-Credit web portal, where customers can get their financing approved with 1-click, and use the Instant Credit feature based on image recognition using the Google Cloud Vision API.  Click on the **Try Instant Credit using Google ML** button to use Instant Credit.
+This is the Apibank web portal, where customers can get their financing approved with 1-click, and use the Instant Credit feature based on image recognition using the Google Cloud Vision API.  Click on the **Try Instant Credit using Google ML** button to use Instant Credit.
 
 <a href="https://smart-credit-cfc36.firebaseapp.com/" target="_blank"><img src="img/smart-credit-portal.png" height="350" /></a>
 
-[Smart-Credit API Hub](https://emea-poc13-smartcredit.apigee.io/)
+[Apibank API Hub](https://emea-poc13-smartcredit.apigee.io/)
 
-The Smart-Credit API Hub has the API products published for different audiences (core credit and insurance providers), as well as app registration for developers, and the terms & conditions for all API clients.
+The Apibank API Hub has the API products published for different audiences (core credit and insurance providers), as well as app registration for developers, and the terms & conditions for all API clients.
 
 <a href="https://emea-poc13-smartcredit.apigee.io/" target="_blank"><img src="img/smart-credit-dev-portal.png" height="350" /></a>
 
 [Ecosystem Chat & Messaging App](https://smart-credit-cfc36.firebaseapp.com/chat.html)
 
-Because the Smart-Credit team has published its core business APIs for both internal and external use, it's easy for app developers to add financing functionality to their apps.  Just send a picture to the smart-credit bot, and you will get your financing offer instantly, just like at the credit portal.
+Because the Apibank team has published its core business APIs for both internal and external use, it's easy for app developers to add financing functionality to their apps.  Just send a picture to the smart-credit bot, and you will get your financing offer instantly, just like at the credit portal.
 
 <a href="https://smart-credit-cfc36.firebaseapp.com/chat.html" target="_blank"><img src="img/credit-chat.png" height="350" /></a>
 
