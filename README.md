@@ -1,7 +1,7 @@
 # Apibank API Ecosystem Showcase
 This is a showcase demo of how APIs can define both an internal and external ecosystem strategy and architecture.  As is demonstrated here, an API-First digital strategy is the cornerstone of a larger internal and ecosystem strategy and transformation.
 
-<img src="img/sc-logo.png" width="350" />
+<img src="img/apibank-logo.png" width="350" />
 
 Apibank is a fictional online bank and financing provider who has a variety of financing packages available for consumers and businesses.  They are known for their low rates and consumer-friendly approach, always looking for creative ways to reach their customers, and fulfill their financing needs.  Their latest feature is an **Instant Credit** feature that allows customers to just upload a photo of an object to finance, and Apibank evalutates the object using the Google Vision API image recognition technology, and tailors a financing offer based on the image data, customer credit history, and other data points.  They are also looking to radically open themselves to partner and ecosystem integrations to expand their business.
 
