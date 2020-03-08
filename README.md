@@ -24,7 +24,7 @@ Based on the very successful implentation of these scenarios, Smart-Credit has a
 
 [Smart-Credit Web Portal](https://smart-credit-cfc36.firebaseapp.com/)
 
-This is the Smart-Credit web portal, where customers can get their financing approved with 1-click, and use the Instant Credit feature based on image recognition using the Google Cloud Vision API.  Click on the **Discover** button to use Instant Credit.
+This is the Smart-Credit web portal, where customers can get their financing approved with 1-click, and use the Instant Credit feature based on image recognition using the Google Cloud Vision API.  Click on the **Try Instant Credit using Google ML** button to use Instant Credit.
 
 <a href="https://smart-credit-cfc36.firebaseapp.com/" target="_blank"><img src="img/smart-credit-portal.png" height="350" /></a>
 
