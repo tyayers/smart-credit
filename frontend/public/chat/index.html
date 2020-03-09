@@ -17,9 +17,9 @@
       </div>
       <ul class="list">
         <li class="clearfix">
-          <img src="sc-logo-small.jpg" class="avatar" alt="avatar" style="width: 55px; height: 55px"/>
+          <img src="../img/core-img/apibank-logo.png" class="avatar bank-logo" alt="avatar" style="width: 55px; height: 55px; object-fit: cover; object-position: left;"/>
           <div class="about">
-            <div class="name">smart-credit bot</div>
+            <div id="bot-name" class="bot-name name">smart-credit bot</div>
             <div class="status">
               <i class="fa fa-circle online"></i> online
             </div>
@@ -120,7 +120,7 @@
     
     <div class="chat">
       <div class="chat-header clearfix">
-        <img src="sc-logo-small.jpg" class="avatar" alt="avatar" />
+        <img src="sc-logo-small.jpg" class="avatar bank-logo" alt="avatar" style="object-fit: cover; object-position: left;" />
         
         <div class="chat-about">
           <div class="chat-with">Chat with the smart-credit bot</div>
@@ -144,7 +144,7 @@
           
           <li>
             <div class="message-data">
-              <span class="message-data-name"><i class="fa fa-circle online"></i> smart-credit bot</span>
+              <span class="bot-name message-data-name"><i class="fa fa-circle online"></i> smart-credit bot</span>
               <span class="message-data-time">10:12 AM, Today</span>
             </div>
             <div class="message my-message">
@@ -165,7 +165,7 @@
           
           <li>
             <div class="message-data">
-              <span class="message-data-name"><i class="fa fa-circle online"></i> smart-credit bot</span>
+              <span class="bot-name message-data-name"><i class="fa fa-circle online"></i> smart-credit bot</span>
               <span class="message-data-time">10:20 AM, Today</span>
             </div>
             <div class="message my-message">
@@ -207,7 +207,7 @@
 <script id="message-response-template" type="text/x-handlebars-template">
   <li>
     <div class="message-data">
-      <span class="message-data-name"><i class="fa fa-circle online"></i> smart-credit bot</span>
+      <span class="message-data-name"><i class="fa fa-circle online"></i> {{botName}}</span>
       <span class="message-data-time">{{time}}, Today</span>
     </div>
     <div class="message my-message" style="white-space: pre-wrap;">{{response}}</div>
@@ -216,7 +216,8 @@
 <!-- partial -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js'></script><script  src="./script.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js'></script>
+<script src="./script.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </body>

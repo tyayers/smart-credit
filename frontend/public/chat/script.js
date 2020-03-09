@@ -1,5 +1,5 @@
 (function(){
-  
+
   var chat = {
     messageToSend: '',
     messageResponses: [
@@ -11,7 +11,22 @@
       'An SEO expert walks into a bar, bars, pub, tavern, public house, Irish pub, drinks, beer, alcohol'
     ],
     imagesrc: '',
+    botName: 'Apibank bot',
     init: function() {
+      var logoSrc = localStorage.getItem('sc-logo');
+      if (logoSrc != null && logoSrc != "#") {
+        $('.bank-logo').attr('src', logoSrc);
+      }
+      else
+        $('.bank-logo').attr('src', "../img/core-img/apibank-logo.png");
+
+      var name = localStorage.getItem('sc-name');
+      if (name != null && name != "") {
+        $(".bot-name").text(name + " bot");
+        $(".chat-with").text("Chat with " + name + " bot");
+        this.botName = name + " bot";
+      }
+
       this.cacheDOM();
       this.bindEvents();
       this.render();
@@ -35,7 +50,8 @@
         var context = { 
           messageOutput: this.messageToSend,
           imageSrc: this.imagesrc,
-          time: this.getCurrentTime()
+          time: this.getCurrentTime(),
+          botNmae: this.botName
         };
 
         this.$chatHistoryList.append(template(context));
