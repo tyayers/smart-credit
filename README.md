@@ -8,7 +8,7 @@ Apibank is a fictional online bank and financing provider who has a variety of f
 ## Customize Demo
 This demo can be customized by double clicking on the Apibank logo in the upper left corner.  You can upload your own logo, and change the bank name, email, address, and phone number.  The changes will be saved in localstorage in your browser, and also applied to the chat app, for the complete experience.
 
-### Apibank Scenarios
+## Apibank Scenarios
 
 Apibank as completed the first stage of this transformation, and has executed on these three scenarios:
 
