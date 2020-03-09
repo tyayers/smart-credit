@@ -29,13 +29,13 @@ Based on the very successful implentation of these scenarios, Apibank has alread
 
 This is the Apibank web portal, where customers can get their financing approved with 1-click, and use the Instant Credit feature based on image recognition using the Google Cloud Vision API.  Click on the **Try Instant Credit using Google ML** button to use Instant Credit.
 
-<a href="https://smart-credit-cfc36.firebaseapp.com/" target="_blank"><img src="img/smart-credit-portal.png" height="350" /></a>
+<a href="https://smart-credit-cfc36.firebaseapp.com/" target="_blank"><img src="img/apibank-portal.png" height="350" /></a>
 
 [Apibank API Hub](https://emea-poc13-smartcredit.apigee.io/)
 
 The Apibank API Hub has the API products published for different audiences (core credit and insurance providers), as well as app registration for developers, and the terms & conditions for all API clients.
 
-<a href="https://emea-poc13-smartcredit.apigee.io/" target="_blank"><img src="img/smart-credit-dev-portal.png" height="350" /></a>
+<a href="https://emea-poc13-smartcredit.apigee.io/" target="_blank"><img src="img/apibank-dev-portal.png" height="350" /></a>
 
 [Ecosystem Chat & Messaging App](https://smart-credit-cfc36.firebaseapp.com/chat.html)
 
