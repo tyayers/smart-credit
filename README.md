@@ -37,11 +37,11 @@ The Apibank API Hub has the API products published for different audiences (core
 
 <a href="https://emea-poc13-smartcredit.apigee.io/" target="_blank"><img src="img/smart-credit-dev-portal.png" height="350" /></a>
 
-[Ecosystem Chat & Messaging App](https://smart-credit-cfc36.firebaseapp.com/chat.html)
+[Ecosystem Chat & Messaging App](https://smart-credit-cfc36.firebaseapp.com/chat)
 
 Because the Apibank team has published its core business APIs for both internal and external use, it's easy for app developers to add financing functionality to their apps.  Just send a picture to the smart-credit bot, and you will get your financing offer instantly, just like at the credit portal.
 
-<a href="https://smart-credit-cfc36.firebaseapp.com/chat.html" target="_blank"><img src="img/credit-chat.png" height="350" /></a>
+<a href="https://smart-credit-cfc36.firebaseapp.com/chat" target="_blank"><img src="img/credit-chat.png" height="350" /></a>
 
 ## Demo Screencast
 
